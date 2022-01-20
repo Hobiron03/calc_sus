@@ -27,15 +27,20 @@ def main():
                     continue
 
                 if is_even(j):
-                    sus_score += int(ans) - 1
-                else:
                     sus_score += 5 - int(ans)
+                else:
+                    sus_score += int(ans) - 1
+
+            print("------------")
+            print(sus_score * 2.5)
             sus_scores[name] = sus_score * 2.5
+            sus_score = 0
 
         print(sus_scores)
         print(calc_sus_score_average(sus_scores))
 
         calc_sus_score_average(sus_scores)
+
 
 def calc_sus_score_average(sus_scores):
     sum = 0
@@ -44,11 +49,13 @@ def calc_sus_score_average(sus_scores):
 
     return sum / len(sus_scores)
 
+
 def is_even(num):
     if num % 2 == 0:
         return True
     else:
         return False
+
 
 if __name__ == '__main__':
     main()
